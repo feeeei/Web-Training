@@ -1,0 +1,73 @@
+body {
+    background-color: #F6F6F6;
+    margin: 0;
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #72777C;
+}
+
+input {
+    margin-top: 8px;
+    background: #FBFBFB;
+    font-size: 24px;
+    border: solid 1px gray;
+    border-radius: 3px;
+    width: 260px;
+}
+
+a:link {
+    color: #999;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #45BCF9;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.center {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.login_panel {
+    position: relative;
+    width: 260px;
+    height: 240px;
+    margin: 16px auto;
+    background-color: white;
+    padding: 30px;
+    padding-top: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+}
+
+.forgot_pwd {
+    position: absolute;
+    right: 20px;
+}
+.login_btn {
+    position: relative;
+    margin-top: -20px;
+    float: right;
+    color: white;
+    height: 30px;
+    padding: 0 8px;
+    width: auto;
+    font-size: 14px;
+    background: #0085ba;
+    border-color: #0073aa #006799 #006799;
+    box-shadow: 0 1px 0 #006799;
+    text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799;
+}
