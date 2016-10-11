@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      border: 3px solid #45BCF9;
+    }
+
+    .container {
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    .initial {
+      -webkit-flex: initial;
+      flex: initial;
+      width: 200px;
+      min-width: 100px;
+    }
+
+    .none {
+      -webkit-flex: none;
+      flex: none;
+      width: 200px;
+    }
+
+    .flex1 {
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    .flex2 {
+      -webkit-flex: 2;
+      flex: 2;
+    }
+
+    .vertical-container {
+      height: 300px;
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+    .center {
+      display: inline;
+      border: 3px solid yellow;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="initial">空间足够的时候，我的宽度是200px，如果空间不足，我会变窄到100px，但不会再窄了。</div>
+  <div class="none">无论窗口如何变化，我的宽度一直是200px。</div>
+  <div class="flex1">我会占满剩余宽度的1/3。</div>
+  <div class="flex2">我会占满剩余宽度的2/3。</div>
+</div>
+
+<div class="vertical-container">
+  <div class="center">CSS里总算是有了一种简单的垂直居中布局的方法了！</div>
+</div>
+</body>
+</html>

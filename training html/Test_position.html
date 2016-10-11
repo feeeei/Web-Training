@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      border: 3px solid #0085ba;
+    }
+    .static {
+      position: static;
+    }
+    .relative {
+      position: relative;
+      top: 20px;
+      left: 50px;
+      display: inline;
+    }
+    .fixed {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      display: inline;
+    }
+    .panel {
+      position: relative;
+      width: 400px;
+      height: 200px;
+    }
+    .absolute {
+      position: absolute;
+      top: 120px;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="static"> static </div>
+<div class="relative">relative</div>
+<div>asd</div>
+<div class="fixed"> fixed </div>
+
+<div class="panel">
+  <div class="absolute"> absolute </div>
+</div>
+</body>
+</html>

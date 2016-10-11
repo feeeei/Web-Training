@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      border: 3px solid #0085ba;
+    }
+    nav {
+      position: absolute;
+      border: 3px solid #72777C;
+      width: 120px;
+    }
+    .container {
+      position: relative;
+    }
+    .content {
+      position: absolute;
+      margin-left: 120px;
+      margin-right: 100px;
+    }
+    .content_top {
+      height: 100px;
+    }
+    .content_body {
+      background-color: #999999;
+    }
+    .content_bottom {
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+    }
+    .right {
+      position: absolute;
+      right: 0;
+      width: 100px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+      <li>e</li>
+      <li>f</li>
+    </ul>
+  </nav>
+  <div class="content">
+    <div class="content_top">section s的 margin-left 样式确保了有足够的空间容纳 nav 元素。</div>
+    <div class="content_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</div>
+    <div class="content_bottom"> bottom </div>
+  </div>
+  <div class="right">right</div>
+</div>
+</body>
+</html>
