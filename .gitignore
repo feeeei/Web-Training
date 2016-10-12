@@ -91,3 +91,27 @@ npm-debug.log
 .env.test
 
 .sass-cache/
+.gitignore
+Gemfile
+Gemfile.lock
+README.rdoc
+Rakefile
+app/assets/images/.keep
+app/assets/javascripts/
+app/assets/stylesheets/application.css
+app/controllers/application_controller.rb
+app/controllers/concerns/
+app/helpers/
+app/mailers/
+app/models/
+app/views/devise/
+app/views/layouts/application.html.erb
+bin/
+config.ru
+config/
+db/
+lib/
+log/
+public/
+test/
+vendor/

@@ -1,101 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Blog Demo</title>
-  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <style>
-    .brand {
-      padding-left: 0;
-    }
-
-    .nav-search-form {
-      display: inline-block;
-      margin-left: 32px;
-    }
-
-    .update-alert {
-      margin-bottom: 0;
-    }
-
-    .content {
-      margin-top: 20px;
-    }
-
-    .blog-panel {
-      padding: 0;
-      margin: 0;
-    }
-
-    .blog {
-      border: 1px solid #EEE;
-      border-radius: 3px;
-      border-left-width: 5px;
-      border-left-color: #f0ad4e;
-      padding: 20px;
-      margin: 8px auto;
-    }
-
-    .blog-info {
-      padding-right: 2px;
-      text-align: center;
-    }
-
-    .user {
-      padding-left: 8px;
-    }
-
-    .user a:link {
-      color: #999;
-      text-decoration: none;
-    }
-
-    p {
-      text-indent: 2em;
-      font-size: 16px;
-    }
-
-    .footer {
-      margin-top: 32px;
-    }
-
-    .about-title {
-      padding: 4px;
-      background-color: #74C2BD;
-      line-height: 1.69em;
-      padding: 12px 15px;
-      color: white;
-      text-align: center;
-    }
-    .about-info {
-      margin-top: 8px;
-      font-family: 'Microsoft yahei';
-      font-style: normal;
-      font-weight: 500;
-      color: #444;
-      font-size: 13px;
-    }
-    .footer {
-      height: 80px;
-      text-align: center;
-      line-height:80px;
-      border-top-style: solid;
-      border-top-width: 1px;
-      border-top-color: #EAEAEA;
-      background-color: white;
-    }
-  </style>
-</head>
-<body>
-
 <nav class="nav navbar-default" role="navigation">
   <div class="container-fluid">
 
     <div class="navbar-header">
       <a href="#">
-        <img class="navbar-left" src="logo.png">
+        <img class="navbar-left" src="assets/logo.png">
         <span class="navbar-brand brand">Blog Demo</span>
       </a>
     </div>
@@ -115,8 +23,12 @@
     </form>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Register</a></li>
+      <% if current_user %>
+          <li><%= link_to current_user.email, users_mine_path %></li>
+      <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
@@ -174,16 +86,10 @@
     </div>
     <div class="col-md-3">
       <h6 class="about-title">ABOUT ME</h6>
-      <img src="blog_13-480x320.jpg" style="width: 100%">
-        <p class="about-info">
-          关于我，中央提出，党的十八大代表应是共产党员中的优秀分子，在坚持先进性的同时应具有广泛的代...
-        </p>
+      <img src="assets/blog_13-480x320.jpg" style="width: 100%">
+      <p class="about-info">
+        关于我，中央提出，党的十八大代表应是共产党员中的优秀分子，在坚持先进性的同时应具有广泛的代...
+      </p>
     </div>
   </div>
 </div>
-<div class="col-md-12 footer">
-  © 2016 Blog Demo
-</div>
-
-</body>
-</html>

@@ -1,0 +1,38 @@
+body {
+    background-color: #F1F1F1;
+}
+
+.user-panel {
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.logo {
+    margin: 16px auto;
+    display: block;
+}
+
+label {
+    color: #72777C;
+    font-size: 14px;
+}
+
+.text-input {
+    background: #FBFBFB;
+    font-size: 24px;
+    width: 100%;
+    border: solid 1px #DDD;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.account-panel {
+    padding: 24px 26px;
+    padding-bottom: 46px;
+}
+
+.control {
+    margin-right: 16px;
+}

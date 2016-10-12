@@ -1,0 +1,82 @@
+.brand {
+    padding-left: 0;
+}
+
+.nav-search-form {
+    display: inline-block;
+    margin-left: 32px;
+}
+
+.update-alert {
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.blog-panel {
+    padding: 0;
+    margin: 0;
+}
+
+.blog {
+    border: 1px solid #EEE;
+    border-radius: 3px;
+    border-left-width: 5px;
+    border-left-color: #f0ad4e;
+    padding: 20px;
+    margin: 8px auto;
+}
+
+.blog-info {
+    padding-right: 2px;
+    text-align: center;
+}
+
+.user {
+    padding-left: 8px;
+}
+
+.user a:link {
+    color: #999;
+    text-decoration: none;
+}
+
+p {
+    text-indent: 2em;
+    font-size: 16px;
+}
+
+.footer {
+    margin-top: 32px;
+}
+
+.about-title {
+    padding: 4px;
+    background-color: #74C2BD;
+    line-height: 1.69em;
+    padding: 12px 15px;
+    color: white;
+    text-align: center;
+}
+
+.about-info {
+    margin-top: 8px;
+    font-family: 'Microsoft yahei';
+    font-style: normal;
+    font-weight: 500;
+    color: #444;
+    font-size: 13px;
+}
+
+.footer {
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #EAEAEA;
+    background-color: white;
+}
