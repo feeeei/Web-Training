@@ -1,0 +1,60 @@
+<style>
+  body {
+    background-color: #F1F1F1;
+  }
+
+  .blog-panel {
+    width: 760px;
+    margin: 0 auto;
+    margin-top: 32px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .article-title {
+    padding: 10px;
+    padding-top: 0px;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
+  .divider-bottom {
+    border-width: 0px;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-color: #DDD;
+  }
+
+  pre {
+    padding: 8px;
+    background-color: transparent;
+    border: 0px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+</style>
+<div class="container">
+  <div class="blog-panel">
+    <ul class="breadcrumb">
+      <li><%= link_to "Blog Demo", root_path %></li>
+      <li><%= link_to @article.category, mine_users_path %></li>
+    </ul>
+    <h2 class="article-title text-center"><%= @article.title %></h2>
+    <div class="align-center divider-bottom">
+      <ul class="list-inline">
+        <li><span class="glyphicon glyphicon-time blog-info"></span><%= @article.created_at.strftime '%Y-%m-%d' %>
+        </li>
+        <li>
+          <%= link_to user_path(@article.user) do %>
+              <span class="glyphicon glyphicon-user blog-info"></span><%= @article.user.email %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <pre style="white-space: pre-wrap;
+        word-wrap: break-word;"><%= @article.text %></pre>
+  </div>
+</div>

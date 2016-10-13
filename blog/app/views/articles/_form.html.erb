@@ -57,8 +57,8 @@
 <div class="container">
   <div class="articles-panel">
     <ul class="breadcrumb">
-      <li><a href="/">Blog Demo</a></li>
-      <li class="active">New Blog</li>
+      <li><%= link_to "Blog Demo", root_path %></li>
+      <li><%= link_to "Mine", mine_users_path %></li>
     </ul>
     <%= simple_form_for(@article) do |f| %>
         <div class="info">

@@ -23,13 +23,13 @@
     </div>
 
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="#">Technology blog</a></li>
-      <li><a href="#">Art blog</a></li>
+      <li><%= link_to "Technology blog",controller: "search",category: "Technology blog"%></li>
+      <li><%= link_to "Art blog",controller: "search",category: "Art blog"%></li>
     </ul>
 
-    <form class="navbar-form nav-search-form" role="search">
+    <form class="navbar-form nav-search-form" action="/search" method="get" role="search">
       <div class="form-group input-group" style="">
-        <input type="text" class="form-control" placeholder="search">
+        <input type="text" name="q" class="form-control" placeholder="search" value="<%=params[:q]%>">
         <span class="input-group-btn">
           <input type="submit" class="btn btn-primary" value="Search!">
         </span>

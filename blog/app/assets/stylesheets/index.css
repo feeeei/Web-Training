@@ -12,29 +12,6 @@
     margin: 0;
 }
 
-.blog {
-    border: 1px solid #EEE;
-    border-radius: 3px;
-    border-left-width: 5px;
-    border-left-color: #f0ad4e;
-    padding: 20px;
-    margin: 8px auto;
-}
-
-.blog-info {
-    padding-right: 2px;
-    text-align: center;
-}
-
-.user {
-    padding-left: 8px;
-}
-
-.user a:link {
-    color: #999;
-    text-decoration: none;
-}
-
 p {
     text-indent: 2em;
     font-size: 16px;
