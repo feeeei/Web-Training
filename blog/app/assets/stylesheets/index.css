@@ -1,19 +1,10 @@
-.brand {
-    padding-left: 0;
-}
-
-.nav-search-form {
-    display: inline-block;
-    margin-left: 32px;
-}
-
 .update-alert {
-    margin-top: 16px;
-    margin-bottom: 0;
+    margin-top: 20px;
+    margin-bottom: 4px;
 }
 
 .content {
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .blog-panel {
@@ -69,14 +60,4 @@ p {
     font-weight: 500;
     color: #444;
     font-size: 13px;
-}
-
-.footer {
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: #EAEAEA;
-    background-color: white;
 }

@@ -5,7 +5,7 @@ body {
 .user-panel {
     width: 320px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .logo {
@@ -35,4 +35,9 @@ label {
 
 .control {
     margin-right: 16px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
 }

@@ -1,0 +1,82 @@
+<style>
+  .footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .articles-panel {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 32px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+  }
+
+  .breadcrumb {
+    background-color: transparent;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .info {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #DDD;
+    padding: 0 15px;
+  }
+
+  .form-input {
+    width: 100%;
+    border: 0px;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 15px;
+    background-color: #F9F9F9;
+  }
+
+  .form-area {
+    width: 100%;
+    border: 0px;
+    resize: none;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .form-bottom {
+    border-bottom-width: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .category {
+    width: 150px;
+    display: inline;
+  }
+</style>
+
+<div class="container">
+  <div class="articles-panel">
+    <ul class="breadcrumb">
+      <li><a href="/">Blog Demo</a></li>
+      <li class="active">New Blog</li>
+    </ul>
+    <%= simple_form_for(@article) do |f| %>
+        <div class="info">
+          <h5>主题标题
+            <small class="pull-right">120</small>
+          </h5>
+        </div>
+        <%= f.input :title, as: :string, label: false, placeholder: "请输入主题标题", input_html: {class: 'form-input form-control'} %>
+        <div class="info">
+          <h5>正文
+            <small class="pull-right">20000</small>
+          </h5>
+        </div>
+        <%= f.text_area :text, as: :text, label: false, class: 'form-area form-control', placeholder: '请输入正文', rows: 16 %>
+        <div class="info form-bottom">
+          <%= select_tag "article[category]", options_for_select(["Technology blog", "Art blog"], @article.category), class: "form-control category" %>
+          <%= f.submit "发布", class: 'btn btn-primary pull-right' %>
+        </div>
+    <% end %>
+  </div>
+</div>

@@ -1,17 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Blog Demo</title>
-  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-<%= link_to "退出登录", destroy_user_session_path, method: 'DELETE', class: "btn btn-danger" %>
-<div class="col-md-12 footer">
-  © 2016 Blog Demo
+<style>
+  .blog {
+    border: 1px solid #EEE;
+    border-radius: 3px;
+    border-left-width: 5px;
+    border-left-color: #f0ad4e;
+    padding: 20px;
+    padding-bottom: 0;
+    margin: 8px auto;
+  }
+</style>
+<div class="container">
+  <h2>我发布的文章
+    <small> 共有<span id="article-count"><%= current_user.article.count %></span>篇</small>
+    <%= link_to "发布 Blog ", new_article_path, class: "btn btn-primary pull-right" %>
+  </h2>
+  <% @articles.each do |article| %>
+      <div class="blog" id="<%= dom_id(article) %>">
+        <h3><%= article.title %></h3>
+        <ul class="list-inline">
+          <li><span class="glyphicon glyphicon-time blog-info"></span><%= article.created_at.strftime '%Y-%m-%d' %></li>
+          <li><span class="glyphicon glyphicon-user blog-info"></span><%= article.user.email %></li>
+        </ul>
+        <p>
+          <%= article.text.truncate(200) %>
+        </p>
+        <div class="clearfix">
+          <ul class="list-inline pull-right">
+            <li><%= link_to "编辑", edit_article_path(article), class: "glyphicon glyphicon-time" %></li>
+            <li><%= link_to "删除", article_path(article), method: :delete, data: {confirm: '确定要删除么？'}, remote: true, class: "btn btn-danger" %></li>
+          </ul>
+        </div>
+      </div>
+  <% end %>
+
 </div>
-</body>
-</html>
 
