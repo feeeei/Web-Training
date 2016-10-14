@@ -1,14 +1,3 @@
-<style>
-  .blog {
-    border: 1px solid #EEE;
-    border-radius: 3px;
-    border-left-width: 5px;
-    border-left-color: #f0ad4e;
-    padding: 20px;
-    padding-bottom: 0;
-    margin: 8px auto;
-  }
-</style>
 <div class="container">
   <h2>我发布的文章
     <small> 共有<span id="article-count"><%= current_user.article.count %></span>篇</small>
@@ -32,6 +21,5 @@
         </div>
       </div>
   <% end %>
-
 </div>
 
