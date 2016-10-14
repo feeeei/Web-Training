@@ -23,8 +23,8 @@
     </div>
 
     <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to "Technology blog",controller: "search",category: "Technology blog"%></li>
-      <li><%= link_to "Art blog",controller: "search",category: "Art blog"%></li>
+      <li><%= link_to "Technology blog", search_path(category: "Technology blog") %></li>
+      <li><%= link_to "Art blog", search_path(category: "Art blog") %></li>
     </ul>
 
     <form class="navbar-form nav-search-form" action="/search" method="get" role="search">
