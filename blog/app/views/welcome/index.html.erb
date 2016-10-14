@@ -1,20 +1,23 @@
 <link rel="stylesheet" href="assets/index.css">
 
 <div class="container">
-  <div class="alert alert-success alert-dismissible update-alert" role="alert">
-    <button type="button" class="close" data-dismiss="alert">
-      <span aria-hidden="true">&times;</span>
-      <span class="sr-only">Close</span>
-    </button>
-    今天已经更新<strong> <%= @today_updated_count %> </strong>篇文章
-  </div>
+  <% if @today_updated_count > 0 %>
+      <div class="alert alert-success alert-dismissible update-alert" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        今天已经更新<strong> <%= @today_updated_count %> </strong>篇文章
+      </div>
+  <% end %>
   <div class="content">
     <div class="col-md-9 blog-panel">
       <% @articles.each do |article| %>
           <div class="blog">
             <h3><%= link_to article.title, article_path(article), class: "blog-title" %></h3>
             <ul class="list-inline">
-              <li><span class="glyphicon glyphicon-time blog-info"></span><%= article.created_at.strftime '%Y-%m-%d' %>
+              <li>
+                <span class="glyphicon glyphicon-time blog-info"></span><%= article.created_at.strftime '%Y-%m-%d' %>
               </li>
               <li>
                 <%= link_to user_path(article.user) do %>
