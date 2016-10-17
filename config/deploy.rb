@@ -13,7 +13,7 @@ set :domain, 'feeeei.com'
 set :deploy_to, '/var/www/feeeei.com'
 set :repository, 'git@github.com:feeeei/Web-Training.git'
 set :branch, 'master'
-set :user, 'root'
+set :user, 'deploy'
 
 # Optional settings:
 #   set :user, 'foobar'          # Username in the server to SSH to.
@@ -50,10 +50,10 @@ task :deploy do
     # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
-    # invoke :'bundle:install'
-    # invoke :'rails:db_migrate'
-    # invoke :'rails:assets_precompile'
-    # invoke :'deploy:cleanup'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
+    invoke :'deploy:cleanup'
 
     on :launch do
       in_path(fetch(:current_path)) do
