@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+gem 'mysql2'
+gem 'mina'
+gem 'puma'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -24,9 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'simple_form'
 gem 'pry-rails'
-gem 'mysql2'
-gem 'mina'
-gem 'puma'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
