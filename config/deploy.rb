@@ -12,7 +12,7 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 set :domain, 'feeeei.com'
 set :deploy_to, '/var/www/feeeei.com'
 set :repository, 'git@github.com:feeeei/Web-Training.git'
-set :branch, 'master'
+set :branch, 'mina'
 set :user, 'deploy'
 
 # Optional settings:
