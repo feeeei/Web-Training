@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'pry-rails'
 gem 'mysql2'
 gem 'mina'
+gem 'puma'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

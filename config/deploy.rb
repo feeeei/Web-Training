@@ -13,6 +13,7 @@ set :domain, 'feeeei.com'
 set :deploy_to, '/var/www/feeeei.com'
 set :repository, 'git@github.com:feeeei/Web-Training.git'
 set :branch, 'master'
+set :user, 'root'
 
 # Optional settings:
 #   set :user, 'foobar'          # Username in the server to SSH to.
@@ -47,7 +48,6 @@ task :deploy do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    invoke :'cd blog'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
