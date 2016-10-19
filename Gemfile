@@ -28,9 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'therubyracer'
 
 gem 'mysql2'
-# gem 'mina'
-# gem 'mina-puma', :require => false
-# gem 'puma'
+gem 'mina'
+gem 'mina-puma', :require => false
+gem 'puma'
 gem 'nokogiri'
 gem 'pkg-config'
 
