@@ -24,7 +24,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'pry-rails'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.10'
 gem 'therubyracer'
 
 gem 'mysql2'
