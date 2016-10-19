@@ -46,8 +46,8 @@ Rails.application.configure do
       :port=> 25,
       :domain=> "qq.com",
       :authentication=> :login,
-      :user_name=> "540203430@qq.com",#你的邮箱
-      :password=> "fwddhtnkjsnqbfic"      #你的密码
+      :user_name=> "540203430@qq.com",
+      :password=> "fwddhtnkjsnqbfic"
   }
 
 end
