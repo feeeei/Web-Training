@@ -1,3 +1,14 @@
+/*
+*= require article
+*= require articles
+*= require index
+*= require search
+*/
+
+body {
+  background-color: #F1F1F1;
+}
+
 .brand {
   padding-left: 0;
 }
@@ -24,6 +35,7 @@
   border-left-color: #f0ad4e;
   padding: 20px;
   margin: 8px auto;
+  background-color: white;
 }
 
 .blog-title {

@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="assets/search.css">
-<div class="blog-panel">
+<div class="search-panel">
   <% @articles.each do |article| %>
       <div class="blog">
         <h3><%= link_to article.title, article_path(article), class: "blog-title" %></h3>
