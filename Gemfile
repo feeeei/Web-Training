@@ -31,6 +31,7 @@ gem 'mina'
 gem 'passenger'
 gem 'nokogiri'
 gem 'pkg-config'
+gem 'rails-i18n'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
