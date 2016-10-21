@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :article_params, only: [:create]
 
   def new
@@ -21,6 +21,18 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to @article, notice: 'article was successfully updated.' }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
