@@ -14,7 +14,7 @@ set :domain, 'feeeei.com'
 set :deploy_to, deploy_to
 set :repository, 'git@github.com:feeeei/Web-Training.git'
 set :branch, 'master'
-set :user, 'root'
+set :user, 'deploy'
 
 # Optional settings:
 #   set :user, 'foobar'          # Username in the server to SSH to.
