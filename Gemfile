@@ -28,8 +28,7 @@ gem 'therubyracer'
 
 gem 'mysql2'
 gem 'mina'
-gem 'mina-puma', :require => false
-gem 'puma'
+gem 'passenger'
 gem 'nokogiri'
 gem 'pkg-config'
 

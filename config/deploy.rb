@@ -1,6 +1,6 @@
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
+require 'mina/rbenv' # for rbenv support. (https://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (https://rvm.io)
 
 # Basic settings:
@@ -9,10 +9,11 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
+deploy_to = '/var/www/feeeei.com'
 set :domain, 'feeeei.com'
-set :deploy_to, '/var/www/feeeei.com'
+set :deploy_to, deploy_to
 set :repository, 'git@github.com:feeeei/Web-Training.git'
-set :branch, 'mina'
+set :branch, 'master'
 set :user, 'root'
 
 # Optional settings:
@@ -39,6 +40,14 @@ end
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
   # command %{rbenv install 2.3.1}
+  command %[mkdir -p "#{deploy_to}/shared/log"]
+  command %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
+
+  command %[mkdir -p "#{deploy_to}/shared/config"]
+  command %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
+
+  command %[touch "#{deploy_to}/shared/config/database.yml"]
+  command %[touch "#{deploy_to}/shared/config/secrets.yml"]
 end
 
 desc "Deploys the current version to the server."
