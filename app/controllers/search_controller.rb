@@ -9,5 +9,6 @@ class SearchController < ApplicationController
     if params[:user]
       @articles = @articles.where user_id: params[:user]
     end
+    @articles = @articles.current_articles params[:page]
   end
 end

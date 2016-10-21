@@ -26,6 +26,7 @@
             <p><%= article.text.truncate(200) %></p>
           </div>
       <% end %>
+      <%= paginate @articles %>
     </div>
     <div class="col-md-3">
       <h6 class="about-title">ABOUT ME</h6>

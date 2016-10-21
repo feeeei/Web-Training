@@ -1,0 +1,15 @@
+<%= paginator.render do -%>
+  <ul class="pagination case_pagination">
+    <%= prev_page_tag unless current_page.first? %>
+    <%= first_page_tag unless current_page.first? || current_page.to_i <= window+1 %>
+    <% each_page do |page| -%>
+      <% if page.left_outer? || page.right_outer? || page.inside_window? -%>
+        <%= page_tag page %>
+      <% elsif !page.was_truncated? && ((page.number - window) < 0 || page.number > total_pages-window) %>
+        <%= gap_tag %>
+      <% end -%>
+    <% end -%>
+    <%= last_page_tag unless current_page.last? || (current_page.to_i + window) >= total_pages %>
+    <%= next_page_tag unless current_page.last? %>
+  </ul>
+<% end -%>
