@@ -11,7 +11,7 @@
             <% end %>
           </li>
         </ul>
-        <p><%= article.text.truncate(200) %></p>
+        <p><%= article.text.gsub(/<[^>]*>/,'').truncate(200) %></p>
       </div>
   <% end %>
   <%= paginate @articles %>

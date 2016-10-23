@@ -16,7 +16,8 @@
         </li>
       </ul>
     </div>
-    <pre style="white-space: pre-wrap;
-        word-wrap: break-word;"><%= @article.text %></pre>
+    <div class="article-content">
+      <%= raw(@article.text) %>
+    </div>
   </div>
 </div>

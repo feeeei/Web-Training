@@ -11,7 +11,7 @@
           <li><span class="glyphicon glyphicon-user blog-info"></span><%= article.user.email %></li>
         </ul>
         <p>
-          <%= article.text.truncate(200) %>
+          <%= article.text.gsub(/<[^>]*>/,'').truncate(200) %>
         </p>
         <div class="clearfix">
           <ul class="list-inline pull-right">

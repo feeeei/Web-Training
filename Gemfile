@@ -33,6 +33,7 @@ gem 'nokogiri'
 gem 'pkg-config'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'bootstrap-wysihtml5-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
