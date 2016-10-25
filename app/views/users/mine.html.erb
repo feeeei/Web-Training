@@ -3,24 +3,9 @@
     <small> 共有<span id="article-count"><%= current_user.article.count %></span>篇</small>
     <%= link_to "发布 Blog ", new_article_path, class: "btn btn-primary pull-right" %>
   </h2>
-  <% @articles.each do |article| %>
-      <div class="blog" id="<%= dom_id(article) %>">
-        <h3><%= article.title %></h3>
-        <ul class="list-inline">
-          <li><span class="glyphicon glyphicon-time blog-info"></span><%= article.created_at.strftime '%Y-%m-%d' %></li>
-          <li><span class="glyphicon glyphicon-user blog-info"></span><%= article.user.email %></li>
-        </ul>
-        <p>
-          <%= article.text.gsub(/<[^>]*>/,'').truncate(200) %>
-        </p>
-        <div class="clearfix">
-          <ul class="list-inline pull-right">
-            <li><%= link_to "编辑", edit_article_path(article), class: "glyphicon glyphicon-time" %></li>
-            <li><%= link_to "删除", article_path(article), method: :delete, data: {confirm: '确定要删除么？'}, remote: true, class: "btn btn-danger" %></li>
-          </ul>
-        </div>
-      </div>
-  <% end %>
+
+  <%=render partial: 'articles/article',collection: @articles,locals: {editable: true} %>
+
   <%= paginate @articles %>
 </div>
 

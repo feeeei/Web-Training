@@ -1,0 +1,27 @@
+<% editable ||= false %>
+<div class="blog" id="<%= dom_id(article) %>">
+  <h3><%= link_to article.title, article_path(article), class: "blog-title" %></h3>
+  <ul class="list-inline">
+    <li><span class="glyphicon glyphicon-time blog-info"></span><%= article.created_at.strftime '%Y-%m-%d' %></li>
+    <li>
+      <% unless editable %>
+          <%= link_to search_path(user: article.user) do %>
+              <span class="glyphicon glyphicon-user blog-info"></span><%= article.user.email %>
+          <% end %>
+      <% else %>
+          <span class="glyphicon glyphicon-user blog-info"></span><%= article.user.email %>
+      <% end %>
+    </li>
+  </ul>
+  <p>
+    <%= article.text.gsub(/<[^>]*>/, '').truncate(200) %>
+  </p>
+  <% if editable %>
+      <div class="clearfix">
+        <ul class="list-inline pull-right">
+          <li><%= link_to "编辑", edit_article_path(article), class: "glyphicon glyphicon-time" %></li>
+          <li><%= link_to "删除", article_path(article), method: :delete, data: {confirm: '确定要删除么？'}, remote: true, class: "btn btn-danger" %></li>
+        </ul>
+      </div>
+  <% end %>
+</div>

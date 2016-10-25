@@ -1,18 +1,4 @@
 <div class="search-panel">
-  <% @articles.each do |article| %>
-      <div class="blog">
-        <h3><%= link_to article.title, article_path(article), class: "blog-title" %></h3>
-        <ul class="list-inline">
-          <li><span class="glyphicon glyphicon-time blog-info"></span><%= article.created_at.strftime '%Y-%m-%d' %>
-          </li>
-          <li>
-            <%= link_to search_path(user: article.user) do %>
-                <span class="glyphicon glyphicon-user blog-info"></span><%= article.user.email %>
-            <% end %>
-          </li>
-        </ul>
-        <p><%= article.text.gsub(/<[^>]*>/,'').truncate(200) %></p>
-      </div>
-  <% end %>
+  <%=render partial: 'articles/article',collection: @articles %>
   <%= paginate @articles %>
 </div>
