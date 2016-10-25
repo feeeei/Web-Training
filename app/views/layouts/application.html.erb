@@ -10,55 +10,64 @@
 </head>
 <body>
 
-<nav class="nav navbar-default nav-bottom" role="navigation">
+<nav class="nav navbar-default nav-bottom-border" role="navigation">
   <div class="container-fluid">
 
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a href="/">
-        <%= image_tag "logo.png", class: "navbar-left" %>
+        <%= image_tag "logo.png", class: "navbar-left logo" %>
         <span class="navbar-brand brand">Blog Demo</span>
       </a>
     </div>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to "Technology blog", search_path(category: "Technology blog") %></li>
-      <li><%= link_to "Art blog", search_path(category: "Art blog") %></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Technology blog", search_path(category: "Technology blog") %></li>
+        <li><%= link_to "Art blog", search_path(category: "Art blog") %></li>
+        <li>
+        <form class="navbar-form nav-search-form" action="/search" method="get" role="search">
+          <div class="input-group nav-search-group">
+            <input type="text" name="q" class="form-control" placeholder="search" value="<%= params[:q] %>">
+            <span class="input-group-btn">
+              <input type="submit" class="btn btn-primary" value="Search!">
+            </span>
+          </div>
+        </form>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                  <%= link_to mine_users_path do %>
+                      <span class="glyphicon glyphicon-user"></span>
+                      我的主页
+                  <% end %>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                  <%= link_to destroy_user_session_path, method: 'DELETE' do %>
+                      <span class="glyphicon glyphicon-off"></span>
+                      退出登录
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+        <% else %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Register", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
 
-    <form class="navbar-form nav-search-form" action="/search" method="get" role="search">
-      <div class="form-group input-group" style="">
-        <input type="text" name="q" class="form-control" placeholder="search" value="<%=params[:q]%>">
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Search!">
-        </span>
-      </div>
-    </form>
-
-    <ul class="nav navbar-nav navbar-right">
-      <% if current_user %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %></a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation">
-                <%= link_to mine_users_path do %>
-                    <span class="glyphicon glyphicon-user"></span>
-                    我的主页
-                <% end %>
-              </li>
-              <li role="presentation" class="divider"></li>
-              <li role="presentation">
-                <%= link_to destroy_user_session_path, method: 'DELETE' do %>
-                    <span class="glyphicon glyphicon-off"></span>
-                    退出登录
-                <% end %>
-              </li>
-            </ul>
-          </li>
-      <% else %>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Register", new_user_registration_path %></li>
-      <% end %>
-    </ul>
   </div>
 </nav>
 <%= image_tag "shadow_light.png", class: "nav-shadow" %>

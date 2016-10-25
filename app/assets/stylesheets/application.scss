@@ -10,11 +10,7 @@ body {
   background-color: #F1F1F1;
 }
 
-.brand {
-  padding-left: 0;
-}
-
-.nav-bottom {
+.nav-bottom-border {
   border-bottom: 1px solid #DDD;
 }
 
@@ -26,7 +22,12 @@ body {
 
 .nav-search-form {
   display: inline-block;
-  margin-left: 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.nav-search-group {
+  padding-left: 15px;
 }
 
 .blog {
@@ -71,4 +72,18 @@ body {
   border-top-width: 1px;
   border-top-color: #EAEAEA;
   background-color: white;
+}
+
+.logo {
+  visibility: visible;
+  padding: 8px auto;
+}
+
+@media(max-width: 768px) {
+  .logo {
+    visibility: hidden;
+  }
+  .brand {
+    padding:15px;
+  }
 }
