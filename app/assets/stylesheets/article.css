@@ -1,10 +1,11 @@
 .article-panel {
-    width: 760px;
+    padding: 0;
     margin: 0 auto;
-    margin-top: 32px;
+    margin-top: 24px;
     background-color: white;
     border-radius: 3px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    float: none;
 }
 
 .article-title {
@@ -24,5 +25,5 @@
 }
 
 .article-content {
-    padding: 8px;
+    padding: 15px;
 }

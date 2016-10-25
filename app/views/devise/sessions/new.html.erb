@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "account" %>
 <div class="user-panel">
-  <img class="logo" src="../assets/logo-lg.png" width="84">
+  <img class="large-logo" src="../assets/logo-lg.png" width="84">
   <div class="panel account-panel">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= f.label :电子邮件地址 %><br/>
