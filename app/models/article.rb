@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
 
   paginates_per 10
 
+  CATEGORY = ['Art blog','Technology blog'].freeze
+
   def Article.all
     super.order(created_at: :desc)
   end

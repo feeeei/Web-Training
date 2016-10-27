@@ -20,7 +20,7 @@
         </div>
         <%= f.text_area :text, as: :text, label: false, class: 'form-area form-control wysihtml5', placeholder: '请输入正文', rows: 16 %>
         <div class="info form-bottom">
-          <%= select_tag "article[category]", options_for_select(["Technology blog", "Art blog"], @article.category), class: "form-control category" %>
+          <%= select_tag "article[category]", options_for_select(Article::CATEGORY, @article.category), class: "form-control category" %>
           <%= f.submit "发布", class: 'btn btn-primary pull-right' %>
         </div>
     <% end %>
